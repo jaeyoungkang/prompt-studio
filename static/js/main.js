@@ -132,8 +132,10 @@ class PromptStudio {
             this.categories = data.categories;
             this.ui.renderCategoryList(this.categories, 
                 (category, template) => this.loadTemplate(category, template),
-                // (el, name) => this.ui.toggleCategory(el, name) // Flowbite handles this now
             );
+            
+            initFlowbite(); 
+
             this.ui.showStatus(`Loaded ${data.total_categories} categories, ${data.total_templates} templates.`);
         } catch (error) {
             this.ui.showToast('Failed to load categories.', 'error');
