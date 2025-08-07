@@ -1,0 +1,177 @@
+/* Prompt Studio - Tailwind CSS Custom Styles */
+
+/* Monaco Editor specific styles */
+.monaco-editor {
+    border-radius: 0;
+}
+
+.monaco-editor .scroll-decoration {
+    box-shadow: none;
+}
+
+/* Category and Template Items */
+.category-item {
+    @apply cursor-pointer p-3 mb-2 rounded-lg border border-transparent transition-all duration-200;
+}
+
+.category-item:hover {
+    @apply bg-gray-100 border-gray-300;
+}
+
+.category-item.active {
+    @apply bg-blue-600 text-white border-blue-600;
+}
+
+.category-item.active:hover {
+    @apply bg-blue-700;
+}
+
+.template-item {
+    @apply cursor-pointer py-2 px-3 my-1 rounded text-sm transition-colors duration-200;
+}
+
+.template-item:hover {
+    @apply bg-white bg-opacity-20;
+}
+
+.template-item.active {
+    @apply bg-white bg-opacity-30 font-medium;
+}
+
+/* Custom scrollbar styles */
+.category-list::-webkit-scrollbar,
+.overflow-y-auto::-webkit-scrollbar {
+    width: 6px;
+}
+
+.category-list::-webkit-scrollbar-track,
+.overflow-y-auto::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.category-list::-webkit-scrollbar-thumb,
+.overflow-y-auto::-webkit-scrollbar-thumb {
+    background-color: #d1d5db;
+    border-radius: 3px;
+}
+
+.category-list::-webkit-scrollbar-thumb:hover,
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+    background-color: #9ca3af;
+}
+
+/* Variable input groups */
+.variable-input-group {
+    @apply mb-2;
+}
+
+.variable-input-group .variable-name {
+    @apply bg-gray-100 px-3 py-2 border border-r-0 border-gray-300 rounded-l text-sm min-w-20;
+}
+
+.variable-input-group input {
+    @apply flex-1 px-3 py-2 border border-gray-300 rounded-r text-sm;
+}
+
+.variable-input-group .remove-btn {
+    @apply bg-red-500 hover:bg-red-600 text-white px-2 py-2 border-l-0 rounded-r text-xs;
+}
+
+/* Badge styles */
+.badge-variable {
+    @apply bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-mono;
+}
+
+/* Loading states */
+.loading {
+    @apply pointer-events-none opacity-60;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Template metadata */
+.template-meta {
+    @apply text-xs text-gray-500 mt-1;
+}
+
+.template-count {
+    @apply bg-blue-100 text-blue-600 px-2 py-1 rounded text-xs font-medium;
+}
+
+/* Editor placeholder content */
+.placeholder-content {
+    @apply absolute inset-0 flex items-center justify-center bg-gray-50;
+}
+
+/* Focus styles */
+input:focus,
+textarea:focus {
+    @apply outline-none ring-2 ring-blue-500 ring-opacity-50;
+}
+
+/* Button disabled states */
+button:disabled {
+    @apply opacity-50 cursor-not-allowed;
+}
+
+/* Modal backdrop blur */
+.modal-backdrop {
+    backdrop-filter: blur(4px);
+}
+
+/* Code formatting */
+code {
+    @apply bg-gray-100 px-1 py-0.5 rounded text-sm font-mono;
+}
+
+pre {
+    @apply font-mono text-sm;
+}
+
+/* Custom utilities */
+.text-truncate {
+    @apply overflow-hidden whitespace-nowrap;
+    text-overflow: ellipsis;
+}
+
+/* Toast animations */
+.toast-enter {
+    @apply transform translate-x-full opacity-0;
+}
+
+.toast-enter-active {
+    @apply transform translate-x-0 opacity-100 transition-all duration-300;
+}
+
+.toast-exit {
+    @apply transform translate-x-0 opacity-100;
+}
+
+.toast-exit-active {
+    @apply transform translate-x-full opacity-0 transition-all duration-300;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .category-item {
+        @apply p-2 mb-1;
+    }
+    
+    .template-item {
+        @apply py-1 px-2;
+    }
+}
